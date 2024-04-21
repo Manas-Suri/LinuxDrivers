@@ -22,6 +22,9 @@ static struct platform_driver hdmi_driver = {
     },
 };
 
+// hdmi_probe and hdmi_remove are used as hot pluggable. They are used with a pointer to reduce the 
+// driver's runtime footprint
+
 static int hdmi_probe(struct platform_device *pdev)
 {
     printk("HDMI device found\n");
